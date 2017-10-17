@@ -1,2 +1,5 @@
 *.pyc
 /.tox
+pyenv2.7/*
+pyenv3.5/*
+
