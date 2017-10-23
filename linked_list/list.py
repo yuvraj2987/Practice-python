@@ -25,3 +25,16 @@ class LinkedList(object):
         # end of if else
     # end of push
 
+    def len(self):
+        if self.head is None:
+            return 0
+        count = 0
+        cur = self.head
+        while cur is not None:
+            count += 1
+            cur = cur.next
+        # end of while
+        return count
+
+# end of linked List
+
