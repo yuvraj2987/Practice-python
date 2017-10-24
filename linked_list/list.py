@@ -1,9 +1,16 @@
 
 class Node(object):
-    __slots__ = ["data", "next"]
+    __slots__ = ["data", "next", "__repr__", "__str__"]
+
     def __init__(self, d):
         self.next = None
         self.data = d
+
+    def __repr__(self):
+        return "Node({0.data!r})".format(self)
+
+    def __str__(self):
+        return "{0.data!s}".format(self)
 # end of class Node
 
 
@@ -36,5 +43,32 @@ class LinkedList(object):
         # end of while
         return count
 
+    def __repr__(self):
+        return "<LinkedList.head={0.head!r}>".format(self.head)
+
+    def __str__(self):
+        cur = self.head
+        data_list = []
+        while cur is not None:
+            data_list.append(cur.data)
+            cur = cur.next
+        # end of while
+        list_str = ", ".join(map(str, data_list))
+        return "[{0!s}]".format(list_str)
+
 # end of linked List
 
+
+def main():
+    l1 = LinkedList()
+    print ("Emtpty list:")
+    print(l1)
+    l1.push(1)
+    l1.push(2)
+    l1.push(3)
+    print ("3 node list:")
+    print(l1)
+
+
+if __name__ == '__main__':
+    main()

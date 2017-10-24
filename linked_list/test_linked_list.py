@@ -9,6 +9,16 @@ class TestLinkedList(unittest.TestCase):
     def setUp(self):
         pass
 
+    def test_list(self):
+        """
+        """
+        l1 = LinkedList()
+        self.assertEqual(str(l1), "[]")
+        l1.push(1)
+        l1.push(2)
+        l1.push(3)
+        self.assertEqual(str(l1), "[1, 2, 3]")
+
     def test_length(self):
         l1 = LinkedList()
         self.assertEqual(l1.len(), 0)
