@@ -1,5 +1,5 @@
 import unittest
-from unique_char_string import is_unique
+from string_utils import is_unique
 
 
 class UniqueChar(unittest.TestCase):
