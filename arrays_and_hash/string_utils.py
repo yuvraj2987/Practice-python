@@ -29,3 +29,38 @@ def is_unique(string):
     # end of for
     return True
 # end of method
+
+
+def get_compressed_string(s):
+    """
+        Compress give string by counting repeated chars
+        input: str
+        output: str
+    """
+    if not isinstance(s, str):
+        return None
+    if len(s) <= 1:
+        return s
+    end_idx = len(s)
+    compress_chars = []
+    cur_char = s[0]
+    char_count = 1
+    idx = 1
+    while idx < end_idx:
+        if s[idx] == cur_char:
+            char_count += 1
+        else:
+            compress_chars.append(cur_char)
+            compress_chars.append(str(char_count))
+            cur_char = s[idx]
+            char_count = 1
+        # end of if
+        idx += 1
+    # end of while
+    compress_chars.append(cur_char)
+    compress_chars.append(str(char_count))
+    compress_str = ''.join(compress_chars)
+    if len(compress_str) >= len(s):
+        return s
+    return compress_str
+# end of method
