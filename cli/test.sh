@@ -1,3 +1,3 @@
 #! /usr/bin/env python
-source pyenv2.7/bin/activate
+source pyenv/bin/activate
 nose2 -v
