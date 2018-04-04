@@ -1,9 +1,10 @@
 import unittest
-from list import LinkedList
+from linked_list.list import LinkedList
 
 
 class TestLinkedList(unittest.TestCase):
     """
+        Test Linked List
     """
 
     def setUp(self):

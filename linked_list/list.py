@@ -1,6 +1,5 @@
 
 class Node(object):
-    __slots__ = ["data", "next", "__repr__", "__str__"]
 
     def __init__(self, d):
         self.next = None

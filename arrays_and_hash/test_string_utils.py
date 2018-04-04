@@ -1,6 +1,7 @@
 import unittest
-from string_utils import is_unique
-from string_utils import get_compressed_string as gcs
+from arrays_and_hash.string_utils import is_unique
+from arrays_and_hash.string_utils import get_compressed_string as gcs
+
 
 class UniqueChar(unittest.TestCase):
     """
