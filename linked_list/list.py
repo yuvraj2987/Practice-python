@@ -1,5 +1,12 @@
+"""
+    Provides Linked List implementation for clients
+"""
+
 
 class Node(object):
+    """
+        Holder for linked list data and next pointer
+    """
 
     def __init__(self, d):
         self.next = None
@@ -14,6 +21,9 @@ class Node(object):
 
 
 class LinkedList(object):
+    """
+        LinkedList class
+    """
 
     def __init__(self):
         self.head = None
