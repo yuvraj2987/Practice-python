@@ -8,4 +8,4 @@ mkdir -p pyenv
 echo "setup virtualenv"
 virtualenv -p python3.5 pyenv
 source pyenv/bin/activate
-pip install -r requirement.txt
+#pip install -r requirement.txt

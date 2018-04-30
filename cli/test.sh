@@ -1,3 +1,2 @@
-#! /usr/bin/env python
-source pyenv/bin/activate
+#! /usr/bin/env bash
 nose2 -v
