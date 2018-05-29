@@ -29,7 +29,6 @@ class TestLinkedList(unittest.TestCase):
         l1.push(3)
         self.assertEqual(l1.len(), 3)
     # end of method
-
 # end of class
 
 

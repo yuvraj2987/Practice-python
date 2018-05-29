@@ -1,8 +1,6 @@
 """
     Provides Linked List implementation for clients
 """
-
-
 class Node(object):
     """
         Holder for linked list data and next pointer
@@ -41,6 +39,11 @@ class LinkedList(object):
         # end of if else
     # end of push
 
+    def push_at_head(self, data):
+        new_node = Node(data)
+        new_node.next = self.head
+        self.head = new_node
+
     def len(self):
         if self.head is None:
             return 0
@@ -64,6 +67,21 @@ class LinkedList(object):
         # end of while
         list_str = ", ".join(map(str, data_list))
         return "[{0!s}]".format(list_str)
+
+    def __del__(self):
+        """
+            Deletes the linked list
+        """
+        cur = self.head
+        prev = None
+        while cur is not None:
+            prev = cur
+            cur = cur.next
+            # Remove all references from prev
+            prev.next = None
+            del prev
+        # end of while
+        self.head = None
 
 # end of linked List
 
