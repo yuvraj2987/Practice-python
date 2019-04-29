@@ -1,6 +1,7 @@
 import unittest
 from arrays_and_hash.string_utils import is_unique
 from arrays_and_hash.string_utils import get_compressed_string as gcs
+from arrays_and_hash.string_utils import checkAnagrams
 
 
 class UniqueChar(unittest.TestCase):
@@ -56,6 +57,35 @@ class CompressedStrings(unittest.TestCase):
         self.assertEqual(gcs(s), "a3b1c5a3")
 
 # end of class
+
+
+class CheckAnagrams(unittest.TestCase):
+
+    def setUp(self):
+        pass
+
+    def test_None_words(self):
+        self.assertFalse(None, "abc")
+        self.assertFalse(None, None)
+
+
+    def test_unequal_length(self):
+        s1 = "abc"
+        s2= "abca"
+        self.assertFalse(s1, s2)
+
+    def test_positive_case(self):
+        s1 = "abcd"
+        s2 = "dabc"
+        self.assertTrue(s1, s2)
+        s1 = "door"
+        s2 = "odor"
+        self.assertTrue(s1, s2)
+
+    def test_equal_lenth_negative_case(self):
+        s1 = "abcd"
+        s2 = "abce"
+        self.assertFalse(w1, w2)
 
 
 
