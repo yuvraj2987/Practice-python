@@ -80,20 +80,20 @@ def checkAnagrams(w1, w2):
         return False
     char_map = {}
     for ch in w1:
-        if ch in w1:
+        if ch in char_map:
             char_map[ch] += 1
         else:
             char_map[ch] = 1
     # end of for
     for ch in w2:
-        if ch not in w1:
+        if ch not in char_map:
             return False
         char_map[ch] -= 1
         if char_map[ch] < 0:
             return False
     # end of for
     for k in char_map:
-        if char_map[k] < 0:
+        if char_map[k] != 0:
             return False
     # end of for
     return True

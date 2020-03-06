@@ -65,27 +65,42 @@ class CheckAnagrams(unittest.TestCase):
         pass
 
     def test_None_words(self):
-        self.assertFalse(None, "abc")
-        self.assertFalse(None, None)
+        self.assertFalse(checkAnagrams(None, "abc"))
+        self.assertFalse(checkAnagrams(None, None))
 
 
     def test_unequal_length(self):
         s1 = "abc"
         s2= "abca"
-        self.assertFalse(s1, s2)
+        result = checkAnagrams(s1, s2)
+        self.assertFalse(result)
 
     def test_positive_case(self):
         s1 = "abcd"
         s2 = "dabc"
-        self.assertTrue(s1, s2)
+        result = checkAnagrams(s1, s2)
+        self.assertTrue(result)
         s1 = "door"
         s2 = "odor"
-        self.assertTrue(s1, s2)
+        result2 = checkAnagrams(s1, s2)
+        self.assertTrue(result2)
 
-    def test_equal_lenth_negative_case(self):
+    def test_negative_case_extra_char(self):
         s1 = "abcd"
         s2 = "abce"
-        self.assertFalse(w1, w2)
+        res = checkAnagrams(s1, s2)
+        self.assertFalse(res)
+
+    def test_negative_case_unequal_number_of_chars(self):
+        s3 = "aabb"
+        s4 = "aaab"
+        self.assertFalse(checkAnagrams(s3, s4))
+
+    def test_neg_missing_char(self):
+        s1 = "aaab"
+        s2 = "bbaa"
+        self.assertFalse(checkAnagrams(s1, s2))
+
 
 
 
