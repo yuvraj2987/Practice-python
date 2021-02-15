@@ -5,7 +5,7 @@ from systems import subproc
 class TestRunCmd(unittest.TestCase):
 
     def test1(self):
-        cmd = ["sh", "-c", "lart"]
+        cmd = ["sh", "-c", "ls"]
         ret = subproc.runCmd(cmd)
         # print("Return code: ", ret)
 
