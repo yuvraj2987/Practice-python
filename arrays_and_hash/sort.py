@@ -46,3 +46,20 @@ def merge(arr, tarr, ls, le, rs, re):
         i += 1
     # end of while
     return
+# end of method
+
+def mergeSort(arr):
+    if arr is None: return
+    l = len(arr)
+    tarr = [None] * l
+    mergeRecur(arr, tarr, 0, l-1)
+
+def mergeRecur(arr, tarr, start, end):
+    if start >= end:
+        return
+    mid = start + (end - start) // 2
+    mergeRecur(arr, tarr, start, mid)
+    mergeRecur(arr, tarr, mid+1, end)
+    merge(arr, tarr, start, mid, mid+1, end)
+    return
+# end of mergeSortRecur
