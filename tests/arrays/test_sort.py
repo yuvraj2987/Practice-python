@@ -119,6 +119,18 @@ class TestMergeRecur(unittest.TestCase):
         arr2 = [ 7, 5, 4, 3, 2]
         sort.mergeRecur(arr2, tarr, 0, 4)
         self.assertEqual(arr2, ans)
+# End of class
+
+
+class TestMergeSort(unittest.TestCase):
+    def setUp(self):
+        pass
+
+    def test_4_elm(self):
+        arr1 = [4, 3, 2, 1]
+        ans  = [1, 2, 3, 4]
+        sort.mergeSort(arr1)
+        self.assertEqual(arr1, ans)
 
 
 
