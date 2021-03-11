@@ -1,7 +1,7 @@
 #! /usr/bin/env python
 
 
-def merge(arr, tarr, ls, le, rs, re):
+def merge_array(arr, tarr, ls, le, rs, re):
     """
         arr: Original array to be modified
         tarr: temporary array to store result of merge
@@ -60,6 +60,6 @@ def mergeRecur(arr, tarr, start, end):
     mid = start + (end - start) // 2
     mergeRecur(arr, tarr, start, mid)
     mergeRecur(arr, tarr, mid+1, end)
-    merge(arr, tarr, start, mid, mid+1, end)
+    merge_array(arr, tarr, start, mid, mid+1, end)
     return
 # end of mergeSortRecur
