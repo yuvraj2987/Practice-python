@@ -1,6 +1,6 @@
 .PHONY: test
 
-test:
+test: clean
 	bash cli/test.sh
 
 setup27:
