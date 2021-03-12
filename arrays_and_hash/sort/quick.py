@@ -22,17 +22,19 @@ def partitioner_efficient(arr, pivote_index):
 
     Patition elements around pivote
 
-    a  _________________________________
-      |   ||     ||               ||    |
-      |___||_____||_______________||____|
-           s      e                 l
+       ______________________________________________
+      |  < p     || == p  ||             ||         ||
+      |__________||_______||_____________||_________||
+                 s         e              l         pi
 
     Maintain invariant
     a[0:s-1]: < pivote
     a[s:e-1]: == pivote
+    a[e:l]: Unexplored elements
     a[l:end]: > pivote
-
-
+    when l == e exit from the loop and
+    ``` swap(arr, pivote_index, n-1) ```
+    since n-1 element is == pivote
     """
     if arr is None:
         return
