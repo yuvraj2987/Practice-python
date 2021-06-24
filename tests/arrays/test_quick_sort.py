@@ -9,6 +9,12 @@ class TestPartition(unittest.TestCase):
     def setUp(self):
         pass
 
+    def test_1_element(self):
+        q = [4]
+        quick.partitioner_efficient(q, 0)
+        self.assertEqual(q, [4])
+
+
     def test_3_element(self):
         arr = [ 4, 3, 2]
         sarr = [ 2, 3, 4]
