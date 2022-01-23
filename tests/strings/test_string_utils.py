@@ -2,6 +2,7 @@ import unittest
 from arrays_and_hash.string_utils import is_unique
 from arrays_and_hash.string_utils import get_compressed_string as gcs
 from arrays_and_hash.string_utils import checkAnagrams
+from arrays_and_hash.string_utils import zigZagConvert
 
 
 class UniqueChar(unittest.TestCase):
@@ -102,6 +103,26 @@ class CheckAnagrams(unittest.TestCase):
         self.assertFalse(checkAnagrams(s1, s2))
 
 
+class ZigZagConvertTest(unittest.TestCase):
+    """
+        Test string zig zag conversion
+    """
+    def setUp(self):
+        pass
+
+    def test_normal_case(self):
+        """
+            Test cases for zig zag conversion
+        """
+        self.assertEqual(zigZagConvert("PAYPALISHIRING", 3), "PAHNAPLSIIGYIR")
+        self.assertEqual(zigZagConvert("ABC", 1), "ABC")
+
+    # end of def
+
+    def test_edge_cases(self):
+        self.assertIsNone(zigZagConvert(None, 1))
+        self.assertIsNone(zigZagConvert("ABC", -1))
+# end of class
 
 
 if __name__ == '__main__':

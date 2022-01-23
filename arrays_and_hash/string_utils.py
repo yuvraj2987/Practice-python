@@ -97,3 +97,45 @@ def checkAnagrams(w1, w2):
             return False
     # end of for
     return True
+# End of method
+
+def zigZagConvert(s, numRows):
+    """
+        Convert given string into zig zag string with given number of rows
+    """
+    if s is None:
+        return None
+    if numRows < 1:
+        return None
+    if numRows == 1:
+        return s
+    rows = [[] for _ in range(numRows)]
+    jmp = 0
+    zigDir = True
+
+    for ch in s:
+        if jmp >= numRows:
+            # Reverse the direction
+            if zigDir:
+                jmp = numRows - 2
+                zigDir = False
+            # else throw exception
+        # end of if
+
+        if jmp < 0:
+            if not zigDir:
+                jmp = 1
+                zigDir = True
+            # else throw exception
+        # end of if
+        row_select = rows[jmp]
+        row_select.append(ch)
+        if zigDir:
+            jmp += 1
+        else:
+            jmp -= 1
+    # end of for
+    rowsStrs = ["".join(r) for r in rows]
+    print(rowsStrs)
+    resultStr = "".join(rowsStrs)
+    return resultStr
